@@ -1,0 +1,5 @@
+h = int(input("Input a height:"))
+first_value = int(input("Enter base, first value:"))
+second_value = int(input("Enter base, second value:"))
+S = float((first_value+second_value)*float(h/2))
+print(S)
