@@ -3,25 +3,25 @@ import os
 pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode((800,600))
-bg = pygame.image.load(r"mp3_images\background.jpg")
+bg = pygame.image.load(r"lab7\mp3_images\background.jpg")
 bg = pygame.transform.scale(bg, (800,600))
 
-play_button = pygame.image.load(r"mp3_images\play.png")
+play_button = pygame.image.load(r"lab7\mp3_images\play.png")
 play_button = pygame.transform.scale(play_button, (100,100))
 
-pause_button = pygame.image.load(r"mp3_images\pause.png")
+pause_button = pygame.image.load(r"lab7\mp3_images\pause.png")
 pause_button = pygame.transform.scale(pause_button, (100,100))
 
-next_button = pygame.image.load(r"mp3_images\next.png")
+next_button = pygame.image.load(r"lab7\mp3_images\next.png")
 next_button = pygame.transform.scale(next_button, (100,100))
 
-back_button = pygame.image.load(r"mp3_images\back.png")
+back_button = pygame.image.load(r"lab7\mp3_images\back.png")
 back_button = pygame.transform.scale(back_button, (100,100))
 
-mus = "songs"
+mus = "lab7\songs"
 album = [os.path.join(mus, file) for file in os.listdir(mus) if file.endswith(".mp3")]
 index = 0
-font = pygame.font.Font(r"mp3_images\tihana.otf", 29)
+font = pygame.font.Font(r"lab7\mp3_images\tihana.otf", 29)
 def load(index):
     pygame.mixer.music.load(album[index])
     trackname = os.path.basename(album[index])
@@ -83,7 +83,7 @@ while done:
         screen.blit(press_next_button,(160,35))
     if pressed[pygame.K_LEFT]:
         press_back_button = pygame.transform.scale(back_button,(130,130))
-        screen.blit(press_back_button,(10,35))
+        screen.blit(press_back_button,(10,35)) 
         
     pygame.display.flip()
 pygame.quit()

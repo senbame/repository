@@ -4,11 +4,11 @@ pygame.init()
 screen = pygame.display.set_mode((800,600))
 clock = pygame.time.Clock()
 
-main_clock = pygame.image.load(r"clock_images\clock.png")
+main_clock = pygame.image.load(r"lab7\clock_images\clock.png")
 main_clock = pygame.transform.scale(main_clock , (800,600))
 
-minutes_arrow = pygame.image.load(r"clock_images\rightarm.png")
-seconds_arrow = pygame.image.load(r"clock_images\leftarm.png")
+minutes_arrow = pygame.image.load(r"lab7\clock_images\rightarm.png")
+seconds_arrow = pygame.image.load(r"lab7\clock_images\leftarm.png")
 
 minutes_arrow = pygame.transform.scale(minutes_arrow , (1000,800))
 seconds_arrow = pygame.transform.scale(seconds_arrow,(50,782))
