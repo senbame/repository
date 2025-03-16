@@ -52,7 +52,10 @@ while done:
                     playing = False
                     paused = True
                 else:
-                    pygame.mixer.music.play()
+                    if paused:
+                        pygame.mixer.music.unpause()
+                    else:
+                        pygame.mixer.music.play()
                     playing = True
                     paused = False
             elif event.key == pygame.K_RIGHT:
@@ -62,6 +65,7 @@ while done:
                 if not paused:
                     pygame.mixer.music.play()
                     playing = True
+                
             elif event.key == pygame.K_LEFT:
                 paused = not playing
                 index = (index - 1) % len(album)
@@ -69,6 +73,7 @@ while done:
                 if not paused:
                     pygame.mixer.music.play()
                     playing = True
+                
     pressed = pygame.key.get_pressed() 
 
     screen.blit(next_button,(175,50))
