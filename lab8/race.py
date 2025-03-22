@@ -24,9 +24,11 @@ red = (255, 0, 0)
 white = (255, 255, 255)
 black = (0, 0, 0)
 yellow = (255, 255 , 0)
+pink = (254,0 ,254)
 
 # Шрифты
 font = pygame.font.Font(r"lab8\elements_of_racing\fontik.ttf", 60)
+font_first = pygame.font.Font(r"lab8\elements_of_racing\Serati.ttf", 40) 
 font_small = pygame.font.Font(r"lab8\elements_of_racing\fontik.ttf", 20)
 game_over = font.render("Game Over", True, black)
 
@@ -147,6 +149,9 @@ while done:
         coin_stat = font_small.render(f"You have {COIN} coins" , True , black)
     score_stat = font_small.render(f"Your score is {SCORE}",True,black)
     if pygame.sprite.spritecollide(me, enemies, False, pygame.sprite.collide_mask):
+        screen.blit(font_first.render("Game Over :(",True ,pink ),(80,250))
+        pygame.display.flip()
+        time.sleep(2)
         screen.blit(gameover_changed,(0,0))
         screen.blit(game_over, (90,20))
         screen.blit(score_stat,(90,100))
